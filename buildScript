@@ -1,0 +1,16 @@
+
+docker run --rm -v $PWD:/app -w /app treeder/go vendor
+docker run --rm -v $PWD:/app -w /app treeder/go build
+docker run --rm -v $PWD:/app -w /app -p 8080:8080 iron/base ./app
+
+构建一个包含你的代码的可以运行的Docker镜像怎么样？
+
+docker run --rm -v $PWD:/app -w /app -v /var/run/docker.sock:/var/run/docker.sock treeder/go image username/myapp:latest
+现在通过你的新镜像来运行代码吧：
+
+docker run --rm -v $PWD:/app -w /app -p 8080:8080 iron/base ./app
+
+或者你也可以下载和构建一个远程的代码仓库：
+
+docker run --rm -v $PWD:/app -w /app treeder/go remote https://github.com/treeder/hello-app.go.git
+最后你将得到一个包含这个远程代码仓库的代码的镜像。
