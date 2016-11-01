@@ -1,0 +1,2 @@
+go-first-service:
+  scale: 1
