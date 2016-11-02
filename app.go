@@ -16,5 +16,5 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 func Hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(w, "Hello world version 2!")
+	fmt.Fprintln(w, "Hello world version 2.0.1!")
 }
